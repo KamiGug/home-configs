@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 for i in 8.3 8.2 8.1 7.4 7.2 5.6; alias phpv$i="sudo update-alternatives --set php /usr/bin/php$i"
 # alias phpv74="sudo update-alternatives --set php /usr/bin/php7.4"
-alias tmux="TERM=xterm-256color tmux"
+# alias tmux="TERM=xterm-256color tmux"
 if [[ "$TMUX" == "" ]]; then
   tmux
 fi
