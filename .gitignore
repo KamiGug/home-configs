@@ -1,0 +1,14 @@
+*
+**
+!.gitignore
+!.zshrc
+!.oh-my-zsh
+!.tmux.conf
+!.zprofile
+!miniscripts
+!.config
+!.config/nvim
+!.config/nvim/*
+!.config/nvim/**
+!.config/nvim/**/*
+
