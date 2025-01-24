@@ -2,7 +2,6 @@
 **
 !.gitignore
 !.zshrc
-!.oh-my-zsh
 !.tmux.conf
 !.zprofile
 !miniscripts
