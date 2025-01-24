@@ -6,9 +6,3 @@
 !.zprofile
 !miniscripts
 !miniscripts/*
-!.config
-!.config/nvim
-!.config/nvim/*
-!.config/nvim/**
-!.config/nvim/**/*
-
