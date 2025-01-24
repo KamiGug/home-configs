@@ -5,6 +5,7 @@
 !.tmux.conf
 !.zprofile
 !miniscripts
+!miniscripts/*
 !.config
 !.config/nvim
 !.config/nvim/*

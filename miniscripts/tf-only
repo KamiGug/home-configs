@@ -1,0 +1,16 @@
+#!/bin/sh
+command="tofu plan -var-file=../variables/dev.tfvars"
+
+# Append targets to the command
+for target in "${@}"; do
+  command="$command -target=${target}"
+done
+
+# Complete the command
+command="$command -out=../plan && tofu apply -auto-approve ../plan"
+
+# Output the command for debugging
+echo "$command"
+
+# Execute the command
+#eval "$command"

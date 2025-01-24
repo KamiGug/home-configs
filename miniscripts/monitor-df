@@ -1,0 +1,2 @@
+#!/bin/sh
+echo '' > /tmp/df.log && clear && tail -f -n 0 /tmp/df.log
