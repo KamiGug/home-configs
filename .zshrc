@@ -131,3 +131,6 @@ fi
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# Created by `pipx` on 2025-01-25 19:42:46
+export PATH="$PATH:/home/kg/.local/bin"
