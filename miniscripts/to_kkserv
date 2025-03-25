@@ -1,1 +1,1 @@
-ssh peon@kkserv
+ssh peon@kkserv -i ~/.ssh/kkserv
