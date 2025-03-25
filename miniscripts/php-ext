@@ -1,6 +1,5 @@
 #!/bin/sh
 for phpver in $(basename -a $(ls $(dirname $(which php))/php*) | grep -e '^php[0-9]'); do
-	sudo apt install -y $phpver
 	for ext in "${@}"; do
 		sudo apt install -y $phpver-$ext
 	done
