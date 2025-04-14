@@ -99,8 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-for i in 8.3 8.2 8.1 7.4 7.2 5.6; alias phpv$i="sudo update-alternatives --set php /usr/bin/php$i"
-# alias phpv74="sudo update-alternatives --set php /usr/bin/php7.4"
+for i in $(ls "$(dirname "$(which php)")"/php* | sed -nE 's/.*php([0-9]+\.[0-9]+).*/\1/p'); do
+  alias phpv$i="sudo update-alternatives --set php /usr/bin/php$i"
+done
 # alias tmux="TERM=xterm-256color tmux"
 if [[ "$TMUX" == "" ]] && [[ -z "$SSH_CLIENT" ]] && [[ -z "$SSH_TTY" ]]; then
   tmux
