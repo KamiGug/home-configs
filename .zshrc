@@ -135,3 +135,5 @@ load-nvmrc
 
 # Created by `pipx` on 2025-01-25 19:42:46
 export PATH="$PATH:/home/kg/.local/bin"
+alias code="flatpak run com.vscodium.codium"
+
