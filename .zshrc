@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+if commmand -v php; then
 for i in $(ls "$(dirname "$(which php)")"/php* | sed -nE 's/.*php([0-9]+\.[0-9]+).*/\1/p'); do
   alias phpv$i="sudo update-alternatives --set php /usr/bin/php$i"
 done
@@ -106,9 +107,11 @@ done
 if [[ "$TMUX" == "" ]] && [[ -z "$SSH_CLIENT" ]] && [[ -z "$SSH_TTY" ]]; then
   tmux
 fi
+fi
 
 PATH=$PATH:~/miniscripts
 
+if command -v nvm; then
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -132,6 +135,7 @@ fi
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+fi
 
 # Created by `pipx` on 2025-01-25 19:42:46
 export PATH="$PATH:/home/kg/.local/bin"
