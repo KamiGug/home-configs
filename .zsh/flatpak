@@ -1,0 +1,3 @@
+alias code="flatpak run com.vscodium.codium"
+alias discord="flatpak run com.discordapp.Discord"
+alias spotify="flatpak run com.spotify.Client"
