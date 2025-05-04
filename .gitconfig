@@ -1,3 +1,5 @@
 [user]
 	email = gug.kamil@gmail.com
 	name = Kamil
+[init]
+	defaultBranch = master
