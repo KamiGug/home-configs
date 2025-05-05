@@ -1,6 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CONFIG_DIR="$HOME/.zsh"
-PATH=$PATH:"~/miniscripts:/home/kg/.local/bin:"
+#export HISTFILE="$ZSH_CONFIG_DIR/"
+PATH=$PATH:"~/miniscripts:~/.local/bin:"
 
 ZSH_THEME="aussiegeek"
 ZSH_TMUX_AUTOSTART=true
