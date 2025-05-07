@@ -7,6 +7,7 @@
 !miniscripts
 !miniscripts/*
 !.gitconfig
+!.gitconfig-*
 !.zsh
 !.zsh/*
 !.oh-my-zsh/
