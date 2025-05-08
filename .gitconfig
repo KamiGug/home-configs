@@ -1,5 +1,17 @@
 [user]
 	email = gug.kamil@gmail.com
-	name = Kamil
+	name = Kamil Gugala
+
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+	path = ~/.gitconfig-github
+
+[includeIf "hasconfig:remote.*.url:git@git.ananas-project.dns-dynamic.net:*/**"]
+	path = ~/.gitconfig-ananas
+
 [init]
 	defaultBranch = master
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
