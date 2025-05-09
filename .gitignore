@@ -7,11 +7,8 @@
 !miniscripts
 !miniscripts/**
 !.gitconfig
-!.gitconfig-*
-!.zsh
-!.zsh/*
-!.oh-my-zsh/
-!.oh-my-zsh/**
+!.shell
+!.shell/**
 !.config
 !.config/kitty
 !.config/kitty/**
