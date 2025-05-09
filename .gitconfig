@@ -3,10 +3,22 @@
 	name = Kamil Gugala
 
 [includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
-	path = ~/.shell/git/.gitconfig-github
+	path = ~/.shell/git/gitconfig-github
+
+[includeIf "hasconfig:remote.*.url:https://github.com/*"]
+	path = ~/.shell/git/gitconfig-github
 
 [includeIf "hasconfig:remote.*.url:git@git.ananas-project.dns-dynamic.net:*/**"]
-	path = ~/.shell/git/.gitconfig-ananas
+	path = ~/.shell/git/gitconfig-ananas
+
+[includeIf "hasconfig:remote.*.url:https://git.ananas-project.dns-dynamic.net/*"]
+	path = ~/.shell/git/gitconfig-ananas
+
+[includeIf "hasconfig:remote.*.url:git@gitlab-p2.autobid.de:*/**"]
+	path = ~/.shell/git/gitconfig-contina
+
+[includeIf "hasconfig:remote.*.url:htts://gitlab-p2.autobid.de/*"]
+	path = ~/.shell/git/gitconfig-contina
 
 [init]
 	defaultBranch = master
