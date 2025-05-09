@@ -1,3 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = .shell/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh
+[submodule ".shell/tmux/tpm"]
+	path = .shell/tmux/tpm
+	url = https://github.com/tmux-plugins/tpm
