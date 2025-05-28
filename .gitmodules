@@ -1,6 +1,9 @@
-[submodule ".oh-my-zsh"]
+[submodule "oh-my-zsh"]
 	path = .shell/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh
-[submodule ".shell/tmux/tpm"]
+[submodule "tpm"]
 	path = .shell/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "nvim-config"]
+	path = .config/nvim
+	url = https://github.com/KamiGug/nvim-config
