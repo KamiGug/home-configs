@@ -1,4 +1,4 @@
 alias code="flatpak run com.vscodium.codium"
-alias discord="flatpak run com.discordapp.Discord"
-alias spotify="flatpak run com.spotify.Client"
-alias dbeaver="flatpak run io.dbeaver.DBeaverCommunity"
+alias discord="flatpak run com.discordapp.Discord >/dev/null 2>&1 &"
+alias spotify="flatpak run com.spotify.Client >/dev/null 2>&1 &"
+alias dbeaver="flatpak run io.dbeaver.DBeaverCommunity >/dev/null 2>&1 &"
