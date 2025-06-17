@@ -4,14 +4,18 @@ export ZSH_CONFIG_DIR="$HOME/.shell/zsh"
 PATH=$PATH:"$HOME/miniscripts:$HOME/.local/bin:"
 
 ZSH_THEME="aussiegeek"
-ZSH_TMUX_AUTOSTART=true
-
-
-plugins=(git git-lfs tmux)
-source $ZSH/oh-my-zsh.sh
 
 for source_file in $(ls -A $ZSH_CONFIG_DIR); do
   source "$ZSH_CONFIG_DIR/$source_file"
 done;
 
+if [ -z "$IS_SSH_HOST" ]; then
+  ZSH_TMUX_AUTOSTART=true
+  echo true
+else
+  ZSH_TMUX_AUTOSTART=false
+  echo false
+fi
+plugins=(git git-lfs tmux)
 
+source $ZSH/oh-my-zsh.sh

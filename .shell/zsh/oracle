@@ -1,0 +1,4 @@
+export ORACLE_HOME=/opt/oracle
+export JAVA_HOME=/opt/jdk-23
+export LD_LIBRARY_PATH=/opt/oracle/instantclient:/opt/oracle/instantclient_23_8:$LD_LIBRARY_PATH
+export PATH=$PATH:$JAVA_HOME/bin

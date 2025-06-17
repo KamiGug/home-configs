@@ -1,0 +1,5 @@
+# IS_SSH_HOST=false
+
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+  IS_SSH_HOST="true";
+fi

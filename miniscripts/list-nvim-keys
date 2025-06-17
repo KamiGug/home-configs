@@ -1,0 +1,5 @@
+#!/bin/sh
+# nvim -es -c 'map' -c 'qa'd
+nvim -es -u NONE +'redir! > /tmp/map_output' +'silent map' +'redir END' +q
+cat /tmp/map_output
+rm /tmp/map_output
