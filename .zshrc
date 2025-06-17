@@ -1,7 +1,7 @@
 export ZSH="$HOME/.shell/oh-my-zsh"
 export ZSH_CONFIG_DIR="$HOME/.shell/zsh"
 #export HISTFILE="$ZSH_CONFIG_DIR/"
-PATH=$PATH:"$HOME/miniscripts:$HOME/.local/bin:"
+PATH=$PATH:"$HOME/.shell/scripts:$HOME/.local/bin:"
 
 ZSH_THEME="aussiegeek"
 

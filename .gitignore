@@ -4,8 +4,6 @@
 !.zshrc
 !.tmux.conf
 !.zprofile
-!miniscripts
-!miniscripts/**
 !.gitconfig
 !.shell
 !.shell/**

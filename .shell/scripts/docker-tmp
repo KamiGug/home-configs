@@ -5,6 +5,5 @@
 
 #todo: add timestamp + rand as a variable
 timestamp="$(date +%s)"
-docker build -t test-tmp-$timestamp . && docker run --name test-tmp-$timestamp -it test-tmp-$timestamp
-docker rm test-tmp-$timestamp > /dev/null 2>&1
+docker build -t test-tmp-$timestamp . && docker run --rm --name test-tmp-$timestamp -it test-tmp-$timestamp
 docker rmi test-tmp-$timestamp > /dev/null 2>&1
