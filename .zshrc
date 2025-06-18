@@ -11,10 +11,8 @@ done;
 
 if [ -z "$IS_SSH_HOST" ]; then
   ZSH_TMUX_AUTOSTART=true
-  echo true
 else
   ZSH_TMUX_AUTOSTART=false
-  echo false
 fi
 plugins=(git git-lfs tmux)
 
