@@ -1,0 +1,101 @@
+#!/bin/bash
+
+set -e
+
+DSN="$1"
+SQL_CODE="$2"
+CONTAINER_VERSION="${3:-latest}"
+
+# Extract DSN components using regex
+
+
+
+function handle_mysql() {
+  ADDITIONAL_OPTIONS=''
+  if [ -z "$HOST" ]; then
+    echo 'missing HOST!'
+    exit 1
+  fi
+  HOST="-h'$HOST'"
+  if [ -z "$PORT" ]; then
+    PORT=''
+  else
+    PORT="-P'$PORT'"
+  fi
+  if [ -z "$USER" ]; then
+    USER=""
+    ADDITIONAL_OPTIONS="$ADDITIONAL_OPTIONS -t"
+  else
+    USER="-u'$USER'"
+  fi
+  if [ -z "$PASSWORD" ]; then
+    PASSWORD=""
+    if [[ "$ADDITIONAL_OPTIONS" != *-t* ]]; then
+      ADDITIONAL_OPTIONS="$ADDITIONAL_OPTIONS -t"
+    fi
+  else
+    PASSWORD="-p'$PASSWORD'"
+  fi
+  if [ -z "$DBNAME" ]; then
+    DBNAME=""
+  else
+    DBNAME="'$DBNAME'"
+  fi
+
+
+  cat <<'EOF'
+  printf "%s" "'$SQL_CODE'" | docker run --rm -i "$ADDITIONAL_OPTIONS" \
+    mysql:"$CONTAINER_VERSION" \
+    /bin/sh -c "exec mysql $HOST $PORT $USER $PASSWORD $DBNAME"
+EOF
+}
+
+function handle_db() {
+  if [[ "$DSN" =~ ^([a-zA-Z][a-zA-Z0-9+.-]*):// ]]; then
+    SCHEMA="${BASH_REMATCH[1]}"
+  else
+    echo "Invalid DSN format"
+    exit 1
+  fi
+
+  regex="^${SCHEMA}://([^:]+):([^@]*)@([^:]+):([0-9]+)/(.+)$"
+  if [[ "$DSN" =~ $regex ]]; then
+    USER="${BASH_REMATCH[1]}"
+    PASSWORD="${BASH_REMATCH[2]}"
+    HOST="${BASH_REMATCH[3]}"
+    PORT="${BASH_REMATCH[4]}"
+    DBNAME="${BASH_REMATCH[5]}"
+  else
+    echo "Invalid DSN format. Expected format: <schema>://user:password@host:port/dbname"
+    exit 1
+  fi
+  SCHEMA="${SCHEMA,,}"
+  case $SCHEMA in
+  mysql)
+    handle_mysql $DSN $CONTAINER_VERSION $SQL_CODE
+    ;;
+  ?)
+    echo "unknown schema $SCHEMA!"
+    exit 1
+    ;;
+  esac
+
+}
+
+
+function main() {
+  if [[ -z "$DSN" || -z "$SQL_CODE" ]]; then
+    echo "Usage: $0 <dsn> <path/to/script or QUERY TO EXECUTE;> [mysql_version]"
+    exit 1
+  fi
+
+
+  if [ -f "$SQL_CODE" ]; then
+    SQL_CODE=$(cat "$SQL_CODE")
+  fi
+  echo SQL CODE = "$SQL_CODE"
+  
+  handle_db
+}
+
+main "$@"
