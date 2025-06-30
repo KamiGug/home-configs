@@ -9,10 +9,12 @@ for source_file in $(ls -A $ZSH_CONFIG_DIR); do
   source "$ZSH_CONFIG_DIR/$source_file"
 done;
 
-if [ -z "$IS_SSH_HOST" ]; then
-  ZSH_TMUX_AUTOSTART=true
-else
-  ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_AUTOSTART=false
+if [[ -n "$IS_SSH_HOST" ]] && [[ -n "$TMUX" ]]; then
+  # ZSH_TMUX_AUTOSTART=true
+  tmux
+# else
+#   ZSH_TMUX_AUTOSTART=false
 fi
 plugins=(git git-lfs tmux)
 
