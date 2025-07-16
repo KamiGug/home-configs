@@ -1,0 +1,13 @@
+export FOREGROUND_SESSION_NAME=foreground
+export BACKGROUND_SESSION_NAME=background
+
+if ! command -v tmux > /dev/null 2>&1; then
+  echo MISSING TMUX! >&2
+  return 1
+fi
+
+alias etf="enter-tmux-session $FOREGROUND_SESSION_NAME"
+alias etb="enter-tmux-session $BACKGROUND_SESSION_NAME"
+alias ets="enter-tmux-session"
+alias ats="add-to-tmux-session"
+alias atb="add-to-tmux-session --session $BACKGROUND_SESSION_NAME"

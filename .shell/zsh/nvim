@@ -1,0 +1,4 @@
+# alias nvim="nvim"
+
+alias vim="nvim"
+alias vi="nvim"
