@@ -3,4 +3,4 @@
 alias vim="nvim"
 alias vi="nvim"
 
-alias nvim-conf="nvim $HOME/.config/nvim"
+alias nvim-conf="cd $HOME/.config/nvim && tmux rename-window 'nvim conf' && nvim ."

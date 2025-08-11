@@ -1,0 +1,49 @@
+name: installer
+help: "CLI tool to install tools needed for my config"
+version: 0.3.0
+
+environment_variables:
+  - name: INSTALL_DIR
+    help: Choose installation directory
+    default: /usr/local/manual
+  - name: LINK_DIR
+    help: Choose link directory
+    default: /usr/local/bin
+
+commands:
+  - name: nvim
+    help: "Install the latest version of Neovim"
+    args:
+      - name: version
+        help: "Version to install (default: latest)"
+        required: false
+    flags:
+      - long: --dir
+        short: -d
+        arg: path
+        help: "Installation directory (default: $INSTALL_DIR or /usr/local/manual)"
+      - long: --link
+        short: -l
+        arg: path
+        help: "Symlink path (defaults to $LINK_DIR/nvim)"
+
+  - name: commands
+    help: "Build all of the bashly CLI tools"
+    environment_variables:
+      - name: SOURCE_DIR
+        help: "Directory that contains all of the bashly projects to build"
+        default: $HOME/.shell/scripts/.src/bash
+      - name: SCRIPTS_DIR
+        help: "Directory holding the executables (needs to be in path)"
+        default: $HOME/.shell/scripts
+    flags:
+      - long: --source
+        short: -s
+        arg: source
+        help: "Set the source directory"
+      - long: --out
+        short: -o
+        arg: out
+        help: "Set the output script directory"
+
+
