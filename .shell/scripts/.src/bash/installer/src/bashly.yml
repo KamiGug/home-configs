@@ -45,5 +45,10 @@ commands:
         short: -o
         arg: out
         help: "Set the output script directory"
-
+  # - name: kitty
+  # - name: lazygit
+  # - name: git-lfs
+  # - name: tmux
+  # - name: bashly
+  # - name: all
 
