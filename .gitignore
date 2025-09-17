@@ -10,4 +10,6 @@
 !.config
 !.config/kitty
 !.config/kitty/**
+!.config/lazygit
+!.config/lazygit/**
 .config/kitty/*.bak

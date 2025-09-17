@@ -1,0 +1,5 @@
+os:
+  editPreset: 'nvim-remote'
+  edit: "nvr --remote-send '<CR><CMD>q<CR><CMD>lua vim.cmd(\"e \" .. {{filename}})<CR>'"
+  open: "nvr --remote-send '<CR><CMD>q<CR><CMD>lua print(\"e \" .. {{filename}})<CR><CMD>lua vim.cmd(\"e \" .. {{filename}})<CR>'"
+  editAtLine: "nvr --remote-send '<CR><CMD>q<CR><CMD>lua vim.cmd(\"e \" .. {{filename}})<CR><CMD>{{line}}<CR>'"
