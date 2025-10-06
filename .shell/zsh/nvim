@@ -1,4 +1,9 @@
-# alias nvim="nvim"
+alias nvim='if [ -n "$(git config --get remote.origin.url)" ]; then
+    repo_name=$(basename -s .git $(git config --get remote.origin.url))
+  else
+    repo_name=$(basename "$(pwd)")
+  fi
+  tmux rename-window "$repo_name"; nvim'
 
 alias vim="nvim"
 alias vi="nvim"
